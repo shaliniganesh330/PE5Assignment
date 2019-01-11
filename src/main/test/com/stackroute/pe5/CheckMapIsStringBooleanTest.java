@@ -1,4 +1,4 @@
-package com.PE5;
+package com.stackroute.pe5;
 
 import org.junit.After;
 import org.junit.Before;
@@ -31,7 +31,7 @@ public class CheckMapIsStringBooleanTest {
         expectedvalue.put("b",false);
         expectedvalue.put("c",true);
         expectedvalue.put("d",false);
-       assertEquals(expectedvalue,ob.mapIsStringBoolean(arrayInput));
+        assertEquals(expectedvalue,ob.mapIsStringBoolean(arrayInput));
     }
     @Test
     public void mapIsStringBooleanFailure()

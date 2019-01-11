@@ -1,4 +1,7 @@
-package com.PE5;
+/* Write a method that accepts a Map object having two key-value pairs with the keys val1 and val2.
+Modify and return the given map as follows:
+a. If the key 'val1' has a value,set the key 'val2' to have that value,and b. set the key 'val1' to have the value " " */
+package com.stackroute.pe5;
 
 import java.security.Key;
 import java.util.ArrayList;

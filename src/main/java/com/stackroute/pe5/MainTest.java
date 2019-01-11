@@ -1,5 +1,5 @@
-package com.PE5;
-
+/* */
+package com.stackroute.pe5;
 import java.util.*;
 
  class Student {
@@ -39,7 +39,6 @@ import java.util.*;
 
     }
 
-
     class StudentSorter implements Comparator<Student>
     {
         public int compare(Student a, Student b)
@@ -59,10 +58,8 @@ public class MainTest {
 
         Collections.sort(students,studentSorter);
 
+
         return students;
 
     }
-
-
-
 }

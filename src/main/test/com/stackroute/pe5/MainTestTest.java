@@ -1,4 +1,4 @@
-package com.PE5;
+package com.stackroute.pe5;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,9 +22,9 @@ public class MainTestTest {
 
     @Test
     public void mainTestSuccess() {
-        Student[] s = new Student[6];
+        Student[] s = new Student[5];
         s[0] = new Student("S01","Asha",21);
-        s[1]= new Student("S02","Veena",44);
+        s[1] = new Student("S02","Veena",44);
         s[2] = new Student("S03","Asha",22);
         s[3] = new Student("S04","Deepa",22);
         s[4] = new Student("S05","Divya",11);
@@ -48,7 +48,7 @@ public class MainTestTest {
     public void mainTestFailure() {
         Student[] s = new Student[6];
         s[0] = new Student("S01","Asha",21);
-        s[1]= new Student("S02","Veena",44);
+        s[1] = new Student("S02","Veena",44);
         s[2] = new Student("S03","Asha",22);
         s[3] = new Student("S04","Deepa",22);
         s[4] = new Student("S05","Divya",11);
