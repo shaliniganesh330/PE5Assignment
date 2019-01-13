@@ -7,28 +7,22 @@ package com.stackroute.pe5;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CheckMapIsStringBoolean
-{
-    public Map<String,Boolean> mapIsStringBoolean(String[] array)
-    {
-        Map< String ,Boolean> map= new HashMap<>();
-        for(int i=0;i<array.length;i++)
-        {
+public class CheckMapIsStringBoolean {
+    public Map<String, Boolean> mapIsStringBoolean(String[] array) {
+        Map<String, Boolean> map = new HashMap<>();
+        for (int i = 0; i < array.length; i++) {
             int count = 0;
-            for (int j = 0; j < array.length; j++)
-            {
+            for (int j = 0; j < array.length; j++) {
                 //comparing one element with other elements and increasing count//
                 if (array[i].equals(array[j]))
                     count++;
             }
 
-            if (count > 1)
-            {
+            if (count > 1) {
                 map.put(array[i], true);
             } else
                 map.put(array[i], false);
         }
-
         return map;
     }
 }

@@ -5,14 +5,11 @@ package com.stackroute.pe5;
 
 import java.util.List;
 
-public class UpdateSpecificArrayElement
-{
-    public List<String> updateArrayElement(List<String> inputlist)
-    {
-        for (int i = 0; i < inputlist.size(); i++)
-        {
-            if (inputlist.get(i).equals("Apple"))
-            {
+public class UpdateSpecificArrayElement {
+    public List<String> updateArrayElement(List<String> inputlist) {
+        for (int i = 0; i < inputlist.size(); i++) {
+            //updating the specific array element by given element//
+            if (inputlist.get(i).equals("Apple")) {
                 inputlist.remove(i);
                 inputlist.add(i, "Kiwi");
             }
@@ -23,5 +20,4 @@ public class UpdateSpecificArrayElement
         }
         return inputlist;
     }
-
 }

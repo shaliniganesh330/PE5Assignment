@@ -11,19 +11,19 @@ import static org.junit.Assert.*;
 
 public class UpdateSpecificArrayElementTest {
     UpdateSpecificArrayElement ob;
+
     @Before
-    public void setUp() throws Exception
-    {ob = new UpdateSpecificArrayElement();
+    public void setUp() throws Exception {
+        ob = new UpdateSpecificArrayElement();
     }
 
     @After
-    public void tearDown() throws Exception
-    {ob = null;
+    public void tearDown() throws Exception {
+        ob = null;
     }
-    @Test
 
-    public void updateSpecificArrayElementTestSuccess()
-        {
+    @Test
+    public void testUpdateSpecificArrayElementTestSuccess() {
         List<String> expectedvalues = new ArrayList<>();
         expectedvalues.add("Kiwi");
         expectedvalues.add("Grape");
@@ -35,12 +35,11 @@ public class UpdateSpecificArrayElementTest {
         actualvalues.add("Grape");
         actualvalues.add("Melon");
         actualvalues.add("Berry");
-        assertEquals(expectedvalues,ob.updateArrayElement(actualvalues));
+        assertEquals(expectedvalues, ob.updateArrayElement(actualvalues));
     }
-    @Test
 
-    public void updateSpecificArrayElementTestFailure()
-    {
+    @Test
+    public void testUpdateSpecificArrayElementTestFailure() {
         List<String> expectedvalues = new ArrayList<>();
         expectedvalues.add("Apple");
         expectedvalues.add("Grape");
@@ -52,7 +51,15 @@ public class UpdateSpecificArrayElementTest {
         actualvalues.add("Grape");
         actualvalues.add("Melon");
         actualvalues.add("Berry");
-        assertNotEquals(expectedvalues,ob.updateArrayElement(actualvalues));
+        assertNotEquals(expectedvalues, ob.updateArrayElement(actualvalues));
     }
-
+    @Test
+    public void testUpdateSpecificArrayElementsInvalid(){
+        List<String> actualvalues = new ArrayList<>();
+        actualvalues.add("Apple");
+        actualvalues.add("Grape");
+        actualvalues.add("Melon");
+        actualvalues.add("Berry");
+        assertNotNull(ob.updateArrayElement(actualvalues));
+    }
 }

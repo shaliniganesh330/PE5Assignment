@@ -10,38 +10,43 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class CheckMapIsStringBooleanTest {
-    CheckMapIsStringBoolean ob;
+    CheckMapIsStringBoolean stringobject;
+
     @Before
-    public void setUp() throws Exception
-    {
-        ob =new CheckMapIsStringBoolean();
+    public void setUp() throws Exception {
+        stringobject = new CheckMapIsStringBoolean();
     }
 
     @After
-    public void tearDown() throws Exception
-    {ob =null; }
+    public void tearDown() throws Exception {
+        stringobject = null;
+    }
 
     @Test
-    public void mapIsStringBooleanSuccess()
-    {
+    public void testMapIsStringBooleanSuccess() {
 //        Map<String> expected ={“a” : true,”b” :false ,”c” :true,”d” : false};
-        String[] arrayInput ={"a","b","c","d","a","c","c"};
-        Map<String,Boolean> expectedvalue = new HashMap<String, Boolean>();
-        expectedvalue.put("a",true);
-        expectedvalue.put("b",false);
-        expectedvalue.put("c",true);
-        expectedvalue.put("d",false);
-        assertEquals(expectedvalue,ob.mapIsStringBoolean(arrayInput));
+        String[] arrayInput = {"a", "b", "c", "d", "a", "c", "c"};
+        Map<String, Boolean> expectedvalue = new HashMap<String, Boolean>();
+        expectedvalue.put("a", true);
+        expectedvalue.put("b", false);
+        expectedvalue.put("c", true);
+        expectedvalue.put("d", false);
+        assertEquals(expectedvalue, stringobject.mapIsStringBoolean(arrayInput));
     }
+
     @Test
-    public void mapIsStringBooleanFailure()
+    public void testMapIsStringBooleanFailure() {
+        String[] arrayInput = {"a", "b", "c", "d", "a", "c", "c"};
+        Map<String, Boolean> expectedvalue = new HashMap<String, Boolean>();
+        expectedvalue.put("a", true);
+        expectedvalue.put("b", false);
+        expectedvalue.put("c", false);
+        expectedvalue.put("d", false);
+        assertNotEquals(expectedvalue, stringobject.mapIsStringBoolean(arrayInput));
+    }
+    @Test(expected = NullPointerException.class)
+    public void testInvalidCase()
     {
-        String[] arrayInput ={"a","b","c","d","a","c","c"};
-        Map<String,Boolean> expectedvalue = new HashMap<String, Boolean>();
-        expectedvalue.put("a",true);
-        expectedvalue.put("b",false);
-        expectedvalue.put("c",false);
-        expectedvalue.put("d",false);
-        assertNotEquals(expectedvalue,ob.mapIsStringBoolean(arrayInput));
+        assertNull(stringobject.mapIsStringBoolean(null));
     }
 }

@@ -9,25 +9,26 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class MainTestTest {
-    MainTest ob;
+    MainTest object;
+
     @Before
     public void setUp() throws Exception {
-        ob = new MainTest();
+        object = new MainTest();
     }
 
     @After
-    public void tearDown() throws Exception
-    {ob = null;
+    public void tearDown() throws Exception {
+        object = null;
     }
 
     @Test
     public void mainTestSuccess() {
         Student[] s = new Student[5];
-        s[0] = new Student("S01","Asha",21);
-        s[1] = new Student("S02","Veena",44);
-        s[2] = new Student("S03","Asha",22);
-        s[3] = new Student("S04","Deepa",22);
-        s[4] = new Student("S05","Divya",11);
+        s[0] = new Student("S01", "Asha", 21);
+        s[1] = new Student("S02", "Veena", 44);
+        s[2] = new Student("S03", "Asha", 22);
+        s[3] = new Student("S04", "Deepa", 22);
+        s[4] = new Student("S05", "Divya", 11);
         ArrayList<Student> expectedValue = new ArrayList<>();
         expectedValue.add(s[1]);
         expectedValue.add(s[3]);
@@ -41,17 +42,18 @@ public class MainTestTest {
         inputStudents.add(s[3]);
         inputStudents.add(s[4]);
 
-        ArrayList<Student>  actualValue = ob.sortedStudents(inputStudents);
-        assertEquals(expectedValue,actualValue);
+        ArrayList<Student> actualValue = object.sortedStudents(inputStudents);
+        assertEquals(expectedValue, actualValue);
     }
+
     @Test
     public void mainTestFailure() {
         Student[] s = new Student[6];
-        s[0] = new Student("S01","Asha",21);
-        s[1] = new Student("S02","Veena",44);
-        s[2] = new Student("S03","Asha",22);
-        s[3] = new Student("S04","Deepa",22);
-        s[4] = new Student("S05","Divya",11);
+        s[0] = new Student("S01", "Asha", 21);
+        s[1] = new Student("S02", "Veena", 44);
+        s[2] = new Student("S03", "Asha", 22);
+        s[3] = new Student("S04", "Deepa", 22);
+        s[4] = new Student("S05", "Divya", 11);
         ArrayList<Student> expectedValue = new ArrayList<>();
         expectedValue.add(s[1]);
         expectedValue.add(s[2]);
@@ -65,8 +67,14 @@ public class MainTestTest {
         inputStudents.add(s[3]);
         inputStudents.add(s[4]);
 
-        ArrayList<Student>  actualValue = ob.sortedStudents(inputStudents);
-        assertNotEquals(expectedValue,actualValue);
+        ArrayList<Student> actualValue = object.sortedStudents(inputStudents);
+        assertNotEquals(expectedValue, actualValue);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testInvalid()
+    {
+        assertNotNull(object.sortedStudents(null).toString());
     }
 
 }

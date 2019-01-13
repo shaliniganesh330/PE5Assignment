@@ -8,23 +8,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FindTheNumOfCount
-{
-    public Map<String,Integer> toCountWordNumber(String string)
-    {
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        String[] words = string.split("\\W|\\_|\\d");//non word character , hyphen and digit from 0-9
-        for (String word : words)
-        {
+public class FindTheNumOfCount {
+    public Map<String, Integer> toCountWordNumber(String inputstring) {
+        Map<String, Integer> mapobject = new HashMap<String, Integer>();
+        String[] words = inputstring.split("\\W|\\_|\\d");//non word character , hyphen and digit from 0-9
+        for (String word : words) {
             String keyword = word.toLowerCase();
-            if (map.containsKey(keyword))
-            {
-                map.put(keyword, map.get(keyword) + 1);
+            //check whether the mapobject is contained and increase the count//
+            if (mapobject.containsKey(keyword)) {
+                mapobject.put(keyword, mapobject.get(keyword) + 1);
             } else {
-                map.put(keyword, 1);
+                mapobject.put(keyword, 1);
             }
         }
-        map.remove("");
-        return map;
+        mapobject.remove("");
+        return mapobject;
     }
 }
