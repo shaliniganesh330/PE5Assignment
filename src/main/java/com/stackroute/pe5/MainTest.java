@@ -63,6 +63,5 @@ public class MainTest {
         StudentSorter studentSorter = new StudentSorter();
         Collections.sort(students, studentSorter);
         return students;
-
     }
 }

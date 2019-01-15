@@ -16,9 +16,9 @@ public class SortingTheNames {
             setinputstring.add(inputstring[i]);
 
         List<String> str = new ArrayList<>();
-        Iterator<String> it = setinputstring.iterator();
-        while (it.hasNext()) {
-            str.add(it.next());
+        Iterator<String> iterator = setinputstring.iterator();
+        while (iterator.hasNext()) {
+            str.add(iterator.next());
         }
         return str;
     }
